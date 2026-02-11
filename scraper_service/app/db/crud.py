@@ -2,7 +2,7 @@ from datetime import datetime
 from app.db.client import get_collection
 import os
 
-COLLECTION_NAME = os.getenv("MONGO_COLLECTION", "scraped_products")
+COLLECTION_NAME = os.getenv("SCRAPER_MONGO_COLLECTION", "scraped_products")
 
 collection = get_collection(COLLECTION_NAME)
 

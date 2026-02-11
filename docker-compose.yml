@@ -16,6 +16,20 @@ services:
       - mongo
     restart: always
 
+  insights:
+    build:
+      context: ./insights_service
+    container_name: insights_service
+    ports:
+      - "8001:8001"
+    volumes:
+    - ./insights_service:/app 
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    restart: always
+
   mongo:
     image: mongo:6
     container_name: mongo_db
