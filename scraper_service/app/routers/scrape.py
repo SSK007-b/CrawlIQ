@@ -7,7 +7,7 @@ from datetime import datetime
 
 router = APIRouter()
 
-@router.post("/scrape", response_model=ScrapePostResponse)
+@router.post("/api/scrape/post", response_model=ScrapePostResponse)
 def scrape_data(payload: ScrapeRequest):
 
     scraper = GenericScraper(payload.url)
